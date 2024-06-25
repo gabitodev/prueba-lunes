@@ -5,6 +5,7 @@ const api = supertest(app);
 
 describe('test hola mundo', () => {
   test('get /, se recibe un json', async () => {
+    console.log('11');
     const response = await api.get('/').expect(200).expect('Content-Type', /json/);
     expect(response.body).toStrictEqual({ hola: 'mundo' });
   });
